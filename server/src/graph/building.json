@@ -1,0 +1,47 @@
+{
+  "name": "Grand Hotel Lobby",
+  "floors": [
+    {
+      "id": "floor-1",
+      "name": "Ground Floor",
+      "nodes": [
+        {"id": "room-101", "type": "room", "x": 50, "y": 50, "width": 100, "height": 80, "label": "Reception"},
+        {"id": "room-102", "type": "room", "x": 180, "y": 50, "width": 120, "height": 80, "label": "Lobby Lounge"},
+        {"id": "room-103", "type": "room", "x": 330, "y": 50, "width": 90, "height": 80, "label": "Restaurant"},
+        {"id": "room-104", "type": "room", "x": 50, "y": 160, "width": 100, "height": 60, "label": "Conference Room A"},
+        {"id": "room-105", "type": "room", "x": 180, "y": 160, "width": 120, "height": 60, "label": "Conference Room B"},
+        {"id": "exit-A", "type": "exit", "x": 100, "y": 10, "width": 40, "height": 20, "label": "Main Exit"},
+        {"id": "exit-B", "type": "exit", "x": 380, "y": 10, "width": 40, "height": 20, "label": "Service Exit"},
+        {"id": "stair-1", "type": "stairwell", "x": 450, "y": 100, "width": 30, "height": 60, "label": "Stairwell 1"}
+      ],
+      "edges": [
+        {"id": "path-1", "from": "room-101", "to": "room-102", "length": 30, "bidirectional": true},
+        {"id": "path-2", "from": "room-102", "to": "room-103", "length": 30, "bidirectional": true},
+        {"id": "path-3", "from": "room-101", "to": "room-104", "length": 30, "bidirectional": true},
+        {"id": "path-4", "from": "room-102", "to": "room-105", "length": 30, "bidirectional": true},
+        {"id": "path-5", "from": "room-104", "to": "room-105", "length": 30, "bidirectional": true},
+        {"id": "path-6", "from": "room-101", "to": "exit-A", "length": 20, "bidirectional": true},
+        {"id": "path-7", "from": "room-103", "to": "exit-B", "length": 20, "bidirectional": true},
+        {"id": "path-8", "from": "room-103", "to": "stair-1", "length": 20, "bidirectional": true},
+        {"id": "path-9", "from": "room-105", "to": "stair-1", "length": 20, "bidirectional": true}
+      ]
+    },
+    {
+      "id": "floor-2",
+      "name": "First Floor",
+      "nodes": [
+        {"id": "room-201", "type": "room", "x": 50, "y": 50, "width": 100, "height": 80, "label": "Executive Office"},
+        {"id": "room-202", "type": "room", "x": 180, "y": 50, "width": 120, "height": 80, "label": "Meeting Room"},
+        {"id": "room-203", "type": "room", "x": 330, "y": 50, "width": 90, "height": 80, "label": "Storage"},
+        {"id": "stair-1-upper", "type": "stairwell", "x": 450, "y": 100, "width": 30, "height": 60, "label": "Stairwell 1 Upper"},
+        {"id": "exit-C", "type": "exit", "x": 100, "y": 10, "width": 40, "height": 20, "label": "Emergency Exit"}
+      ],
+      "edges": [
+        {"id": "path-10", "from": "room-201", "to": "room-202", "length": 30, "bidirectional": true},
+        {"id": "path-11", "from": "room-202", "to": "room-203", "length": 30, "bidirectional": true},
+        {"id": "path-12", "from": "room-201", "to": "exit-C", "length": 20, "bidirectional": true},
+        {"id": "path-13", "from": "room-203", "to": "stair-1-upper", "length": 20, "bidirectional": true}
+      ]
+    }
+  ]
+}

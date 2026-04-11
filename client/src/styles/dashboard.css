@@ -1,0 +1,80 @@
+/* Specific styles for the dashboard can go here if Tailwind isn't sufficient */
+/* For example, complex grid layouts or custom map overlays */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 24px;
+  height: calc(100vh - 120px); /* Adjust based on header/footer height */
+}
+
+.map-container {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  position: relative;
+  overflow: hidden;
+}
+
+.alerts-panel-container {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.stats-panel-container {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+/* Styles for the building map SVG/canvas */
+.building-map-svg {
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.room-node {
+  fill: var(--surface);
+  stroke: var(--border);
+  stroke-width: 1px;
+  transition: fill 0.3s ease-in-out;
+}
+
+.room-node.hazard {
+  fill: var(--error);
+  animation: pulseGlow 1.5s infinite;
+}
+
+.path-edge {
+  stroke: var(--textSecondary);
+  stroke-width: 2px;
+  transition: stroke 0.3s ease-in-out;
+}
+
+.path-edge.safe {
+  stroke: var(--success);
+  stroke-width: 3px;
+}
+
+.path-edge.blocked {
+  stroke: var(--error);
+  stroke-dasharray: 5 5;
+}
+
+.person-icon {
+  fill: var(--secondary);
+  animation: fadeIn 0.5s;
+}
+
+.exit-icon {
+  fill: var(--primary);
+}
+
+.floor-selector-button {
+  @apply bg-surface text-text px-4 py-2 rounded-lg hover:bg-primary/20 transition-colors duration-200;
+}
+
+.floor-selector-button.active {
+  @apply bg-primary text-white;
+}

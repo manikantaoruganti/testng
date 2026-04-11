@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text);
+  background-color: var(--background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: var(--text);
+}
+
+/* Custom scrollbar for a sleek look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+  border: 2px solid var(--surface);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* General utility classes */
+.card {
+  @apply bg-surface rounded-xl shadow-lg p-6 border border-border;
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-6 py-3 rounded-xl font-semibold hover:bg-accent transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-background;
+}
+
+.input-field {
+  @apply w-full p-3 bg-background border border-border rounded-lg text-text focus:outline-none focus:ring-2 focus:ring-primary;
+}
+
+.badge-info {
+  @apply bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.badge-warning {
+  @apply bg-warning/20 text-warning px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.badge-error {
+  @apply bg-error/20 text-error px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.badge-success {
+  @apply bg-success/20 text-success px-3 py-1 rounded-full text-sm font-medium;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
